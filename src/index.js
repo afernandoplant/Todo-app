@@ -59,7 +59,7 @@ formEl.addEventListener('submit', (e) => {
 
 // Bonus: Add a watcher for local storage
 window.addEventListener('storage', (e) => {
-    if (e.key === 'notes') {
+    if (e.key === 'todos') {
         renderTodos()
     }
 })
