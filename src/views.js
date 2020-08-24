@@ -10,9 +10,12 @@ const renderTodos = () => {
     let todos = getTodos()
     
     let results = filterTodos(todos, filters)
-    
+    let incompleteTodos = results.filter( (object) => !object.completed)
+    debugger
     const todoEl = document.querySelector('#note-holder')
     todoEl.innerHTML = ''
+
+    generateSummaryDOM(incompleteTodos)
 
     if (results.length > 0) {
         
@@ -53,7 +56,7 @@ const generateTodoDOM = (todo) => {
         toggleTodo(todo.id)
         saveTodos()
         renderTodos()
-        generateSummaryDOM()
+        //generateSummaryDOM()
     })
     
     //create body span
@@ -76,7 +79,7 @@ const generateTodoDOM = (todo) => {
     todoEl.appendChild(button)
     button.addEventListener('click', () => {
         removeTodo(todo.id)
-        generateSummaryDOM()
+        //generateSummaryDOM()
         renderTodos()
     })
 
@@ -89,16 +92,15 @@ const generateTodoDOM = (todo) => {
 // Arguments: incompletedTodos
 // Return value: the summary element
 
-const generateSummaryDOM = () => {
+const generateSummaryDOM = (incompleteTodos) => {
 
     const counter = document.querySelector('#counter')
+    counter.classList.add(`list-title`)
 
-    let count= getTodos().filter( object => !object.completed).length
+    let count= incompleteTodos.length
     count === 1 ? counter.textContent = `you have ${count} todo remaining` : counter.textContent = `you have ${count} todos remaining`
     
-    
-
-    return counter
+    //return counter
 }
 
 // Make sure to set up the exports

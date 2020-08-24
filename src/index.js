@@ -11,7 +11,7 @@ import { renderTodos, generateTodoDOM, generateSummaryDOM } from  './views'
 
 // Render initial todos
 
-generateSummaryDOM()
+//generateSummaryDOM()
 renderTodos()
 
 // Set up search text handler
@@ -51,7 +51,7 @@ formEl.addEventListener('submit', (e) => {
     
 
     renderTodos()
-    generateSummaryDOM()
+    //generateSummaryDOM()
     
     e.target.elements.newTodo.value= ''
     
@@ -59,7 +59,9 @@ formEl.addEventListener('submit', (e) => {
 
 // Bonus: Add a watcher for local storage
 window.addEventListener('storage', (e) => {
+
     if (e.key === 'todos') {
+        loadTodos()
         renderTodos()
     }
 })

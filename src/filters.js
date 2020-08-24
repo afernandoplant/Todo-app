@@ -20,7 +20,7 @@ const setFilters = (updates) => {
     }
 
     if (typeof updates.hideComplete === 'boolean') {
-        filters.searchText = updates.hideComplete
+        filters.hideComplete = updates.hideComplete
     }
 }
 

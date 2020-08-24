@@ -1,8 +1,7 @@
 import { v4 as uuidv4 } from 'uuid'
 
 // Setup the empty todos array
-
-
+let todos = []
 // loadTodos
 // Arguments: none
 // Return value: none
@@ -11,9 +10,9 @@ const loadTodos = () => {
     const todosJSON = localStorage.getItem('todos')
     
     try {
-        return todosJSON ? JSON.parse(todosJSON) : []
+        todos = todosJSON ?  JSON.parse(todosJSON) : []
     } catch (error) {
-        return []
+        todos = []
     }
 
 }
@@ -25,8 +24,8 @@ const saveTodos = () => {
     localStorage.setItem('todos', JSON.stringify(todos))
 }
 
-let todos = []
-todos = loadTodos()
+
+loadTodos()
 
 // getTodos
 // Arguments: none
