@@ -1,15 +1,43 @@
 <!DOCTYPE html>
+<html>
+    <head>
+        <title>To-dos App</title>
+        <link rel="shortcut icon" href="/images/favicon.png?v=1" type="image/x-icon">
+        <link rel="stylesheet" href="/styles/styles.css">
+    </head>
+    <body>
+        <div class="header">
+            <div class="container">
+                <h1 class="header__title">To-do App</h1>
+                <h2 class="header__subtitle">What do you need to do?</h2>
+            </div>
+        </div>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/images/favicon.png?v=1" type="image/x-icon">
-    <title>Boilerplate App</title>
-</head>
-<body>
-    <h1>Boilerplate</h1>
-    <script src="/scripts/bundle.js"></script>
-</body>
+        <div class="actions">
+            <div class="actions__container">
+                <input id="search_text" class="input" type="text" placeholder="filter todos">
+                <label for="hideComplete" class="checkbox">
+                    <input type="checkbox" id="hide_complete"> Hide completed
+                </label>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <div id="counter"></div>
+            <div id="note-holder" class="container"></div>
+
+            
+        </div>
+        
+        <div class="container">
+            <form id="new_todo_form">
+                <input id="newTodoA" class="input" name="newTodo" type="text" placeholder="Enter something to do...">
+                <button id="newTodoB" class="button">Submit</button>
+            </form>
+        </div>
+        
+
+        <script src="/scripts/bundle.js"></script>
+    </body>
 </html>
